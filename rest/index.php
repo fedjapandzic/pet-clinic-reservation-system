@@ -13,14 +13,12 @@ Flight::register('ownersDao', 'OwnersDao');
 
 //List all owners
 Flight::route('GET /owners',function(){
-    $owners = Flight::ownersDao() ->get_all();
-    Flight::json($owners);
+    Flight::json(Flight::ownersDao()->get_all());
 });
 
 //List individual owners
 Flight::route('GET /owners/@owners_id',function($owners_id){
-    $owner = Flight::ownersDao() ->get_by_id($owners_id);
-    Flight::json($owner);
+    Flight::json(Flight::ownersDao()->get_by_id($owners_id));
 });
 
 //Insert owners
@@ -32,15 +30,13 @@ Flight::route('POST /owners',function(){
 //Update owners
 Flight::route('PUT /owners/@owners_id',function($owners_id){
     $data = Flight::request()->data->getData();
-    Flight::ownersDao()->update($owners_id,$data['full_name'],$data['age']);
-    print_r($owners_id);
-    Flight::json($data);
+    Flight::ownersDao()->update($owners_id,$data);
+    Flight::json(Flight::ownersDao()->get_by_id($owners_id));
 });
 
 //Delete owners
 Flight::route('DELETE /owners/@owners_id',function($owners_id){
-    Flight::ownersDao()->delete($owners_id);
-    Flight::json(["message" => "Deleted"]);
+   Flight::usersDao()->delete($owners_id);
 });
 
 Flight::start();
