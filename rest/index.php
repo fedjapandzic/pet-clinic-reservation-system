@@ -3,41 +3,19 @@
 ini_set('display_errors' ,1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
+require '../vendor/autoload.php';
 
-require_once 'dao/OwnersDao.class.php';
-require_once '..\vendor\autoload.php';
+require_once __DIR__ . './services/OwnersService.class.php';
 
-Flight::register('ownersDao', 'OwnersDao');
+Flight::register('ownersService' , 'OwnersService');
 
-//CRUD operations for owners entity
+//import all routes
 
-//List all owners
-Flight::route('GET /owners',function(){
-    Flight::json(Flight::ownersDao()->get_all());
+require_once __DIR__ . '/routes/OwnersRoutes.php';
+ /*
+Flight::route('GET/',function(){
+    echo "Hello Sanjin Vedran Fedja";
 });
-
-//List individual owners
-Flight::route('GET /owners/@owners_id',function($owners_id){
-    Flight::json(Flight::ownersDao()->get_by_id($owners_id));
-});
-
-//Insert owners
-Flight::route('POST /owners',function(){
-    $data = Flight::request()->data->getData();
-    Flight::json(Flight::ownersDao()->insert($data));
-});
-
-//Update owners
-Flight::route('PUT /owners/@owners_id',function($owners_id){
-    $data = Flight::request()->data->getData();
-    Flight::ownersDao()->update($owners_id,$data);
-    Flight::json(Flight::ownersDao()->get_by_id($owners_id));
-});
-
-//Delete owners
-Flight::route('DELETE /owners/@owners_id',function($owners_id){
-   Flight::usersDao()->delete($owners_id);
-});
-
+*/
 Flight::start();
 ?>
