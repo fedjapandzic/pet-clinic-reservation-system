@@ -9,7 +9,7 @@ abstract class BaseService
 
     public function get_all()
     {
-        return $this->dao-get_all();
+        return $this->dao->get_all();
     }
 
     public function get_by_id($id)
@@ -24,7 +24,7 @@ abstract class BaseService
 
     public function update($entity , $id)
     {
-        return this->dao->update($entity,$id);
+        return this->dao->update($id,$entity);
     }
 
     public function delete($id)

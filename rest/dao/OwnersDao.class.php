@@ -9,7 +9,7 @@ class OwnersDao extends BaseDao {
 
   function getOwnerByFullName($full_name)
   {
-    return $this->query_unique("SELECT * FROM owners WHERE full_name = :full_name", ["full_name =>$full_name"]);
+    return $this->query_unique("SELECT * FROM owners WHERE full_name = :full_name", ["full_name" =>$full_name]);
     
   }
 

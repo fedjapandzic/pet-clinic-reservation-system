@@ -9,9 +9,9 @@ class OwnersService extends BaseService
         parent::__construct(new OwnersDao);
     }
 
-    function getUserByFullName($full_name)
+    function getOwnerByFullName($full_name)
     {
-        return $this->dao->getUserByFullName($full_name);
+        return $this->dao->getOwnerByFullName($full_name);
     }
 }
 
