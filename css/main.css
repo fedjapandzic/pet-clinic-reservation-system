@@ -1,0 +1,48 @@
+:root {
+  --primarycolor: #0a76d8;
+  --primarycolorhover: #006dd3;
+  --btnice: #d8ebfa;
+  --btnnicetext: #1b62b3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  font-family: "Inter", sans-serif;
+}
+
+
+
+/* -----------Button---------------*/
+.btn {
+  cursor: pointer;
+  padding: 8px 20px;
+  outline: none;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  border-radius: 25px;
+  font-family: "Inter", sans-serif;
+}
+
+.btn:hover {
+  background-color: var(--primarycolorhover);
+  box-shadow: none;
+  transition: all 0.5s;
+  font-family: "Inter", sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--primarycolor);
+  border: 1px solid var(--primarycolor);
+  color: #fff;
+  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+
+}
+
+
+[colspan] {
+  text-align: center;
+}
