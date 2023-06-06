@@ -93,18 +93,25 @@ i {
     width: 100%;
     height: 50px;
     margin-top: 20px;
-    background-color: #002793;
-    color: white;
+    background-color: #f9f6e8;;
+    color: black;
     font-size: 18px;
     cursor: pointer;
     padding: 8px 20px;
     outline: none;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     letter-spacing: 0.5px;
     transition: all 0.3s;
     border-radius: 25px;
     font-family: "Inter", sans-serif;
+    font-weight: bold;
+}
+
+.login:hover {
+    background-color: #2e6656;
+    box-shadow: none;
+    transition: all 0.5s;
 }
 
 p {
