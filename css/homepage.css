@@ -28,6 +28,7 @@
     transition: all 0.3s;
     border-radius: 25px;
     font-family: "Inter", sans-serif;
+    width: 200px;
   }
   
   .btn:hover {
