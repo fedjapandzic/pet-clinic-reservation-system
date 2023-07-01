@@ -24,7 +24,7 @@ abstract class BaseService
 
     public function update($entity , $id)
     {
-        return this->dao->update($id,$entity);
+        return $this->dao->update($id,$entity);
     }
 
     public function delete($id)
